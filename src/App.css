@@ -1,0 +1,133 @@
+.app {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .app-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+  }
+  
+  .app-header h1 {
+    margin: 0 0 15px 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .game-status {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .current-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .player {
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .player.white {
+    background-color: #FFFFFF;
+    color: #333;
+  }
+  
+  .player.black {
+    background-color: #333;
+    color: #FFFFFF;
+  }
+  
+  .game-over {
+    background-color: #D32F2F;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    animation: bounce 0.5s ease-in-out;
+  }
+  
+  .game-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  
+  .game-left-panel,
+  .game-right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .game-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  @keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1200px) {
+    .game-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .game-left-panel,
+    .game-right-panel {
+      order: 2;
+    }
+    
+    .game-center {
+      order: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .app {
+      padding: 10px;
+    }
+    
+    .app-header h1 {
+      font-size: 2rem;
+    }
+    
+    .game-status {
+      font-size: 1rem;
+    }
+    
+    .game-container {
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app-header h1 {
+      font-size: 1.5rem;
+    }
+    
+    .current-player {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
