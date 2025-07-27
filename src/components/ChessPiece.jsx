@@ -3,9 +3,19 @@ import './ChessPiece.css';
 
 const ChessPiece = ({ type, color, isSelected }) => {
   const getImageSrc = () => {
-    const pieceCode = color[0] + type[0].toUpperCase(); // e.g., wK, bQ
-    return `/assets/pieces/cburnett/${pieceCode}.svg`;
+  const typeMap = {
+    king: 'K',
+    queen: 'Q',
+    rook: 'R',
+    bishop: 'B',
+    knight: 'N',
+    pawn: 'P'
   };
+
+  const pieceCode = color[0] + typeMap[type];
+  return `/assets/pieces/cburnett/${pieceCode}.svg`;
+};
+
 
   return (
     <div className={`chess-piece ${color} ${isSelected ? 'selected' : ''}`}>
